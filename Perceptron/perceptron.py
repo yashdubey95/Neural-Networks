@@ -29,16 +29,14 @@ class Perceptron(object):
         classes = self.number_of_classes
         in_dim = self.input_dimensions
         self.weights = np.random.randn(classes, in_dim + 1)
-#        raise Warning("You must implement _initialize_weights! This function should initialize (or re-initialize) your model weights. Bias should be included in the weights")
 
     def initialize_all_weights_to_zeros(self):
         """
-        Initialize the weights, initalize using random numbers.
+        Initialize the weights to zero.
         """
         cls_zero = self.number_of_classes
         dim_zero = self.input_dimensions
         self.weights = np.zeros((cls_zero, dim_zero + 1))
-#        raise Warning("You must implement this function! This function should initialize (or re-initialize) your model weights to zeros. Bias should be included in the weights")
 
     def predict(self, X):
         """
@@ -51,7 +49,6 @@ class Perceptron(object):
         net = np.dot(self.weights,X)
         y_pred = np.where(net>=0.0,1.0,0.0)
         return y_pred
-        # raise Warning("You must implement predict. This function should make a prediction on a matrix of inputs")
 
 
     def print_weights(self):
@@ -59,7 +56,6 @@ class Perceptron(object):
         This function prints the weight matrix (Bias is included in the weight matrix).
         """
         print(self.weights)
-        # raise Warning("You must implement print_weights")
 
     def train(self, X, Y, num_epochs=10, alpha=0.001):
         """
@@ -83,12 +79,6 @@ class Perceptron(object):
                 self.weights[0:,:1] = self.weights[0:,:1] + alpha*error
                 
 
-
-
-
-
-        # raise Warning("You must implement train")
-
     def calculate_percent_error(self,X, Y):
         """
         Given a batch of data this function calculates percent error.
@@ -108,13 +98,8 @@ class Perceptron(object):
             else:
                 num_of_errors += 1
         return num_of_errors/X.shape[1]
-##        # raise Warning("You must implement calculate_percent_error")
 
 if __name__ == "__main__":
-    """
-    This main program is a sample of how to run your program.
-    You may modify this main program as you desire.
-    """
 
     input_dimensions = 2
     number_of_classes = 2
