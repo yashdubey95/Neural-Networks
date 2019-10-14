@@ -75,7 +75,7 @@ class Hebbian(object):
 
     def initialize_all_weights_to_zeros(self):
         """
-        Initialize the weights, initalize using random numbers.
+        Initialize the weights to zero.
         """
         cls_zero = self.number_of_classes
         dim_zero = self.input_dimensions
