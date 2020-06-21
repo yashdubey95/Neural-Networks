@@ -1,4 +1,4 @@
-#Perceptron
+# Perceptron
 
 The goal of this assignment is to implement a perceptron model from scratch.
 
